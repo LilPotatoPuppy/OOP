@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 using namespace std;
-int main(){
 		class car{
 			private:
 		int MaxSpeed;
@@ -52,6 +51,7 @@ int main(){
 			cout << endl;
 		}
 	};
+int main(){
 	car weeew;
 	weeew.NewInfo();
 	weeew.SoundsEffect();
