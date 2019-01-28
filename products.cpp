@@ -3,69 +3,70 @@
 using namespace std;
 class Product{
 	private:
-		std::string Name;
+		string Name;
 		float Cost;
 		float Weight;
-		public:
-		void Apples(std::string Name, float Weight){
-			cout << "Apples! Good choice! How many kilos will you take?" << endl;
+	public:
+		void SetName(){
+			cout << "What do you want to buy?" << endl;
+			cin >> Name;
+		}
+		string GetName(){
+			return Name;
+		}
+		void SetCost(){
+			cout << "Which is price for kilo?" << endl;
+			cin >> Cost;
+		}
+		float GetCost(){
+			return Cost;
+		}
+		void SetWeight(){
+			cout << "How many kilos did you take?" << endl;
 			cin >> Weight;
-			Name = ("Apples");
 		}
-		void Candies(std::string Name, float Weight){
-			cout << "Candies! Tasty, but not healthy. \n ... \n No one actually cares. How many kilows will you take?" << endl;
-			cin >> Weight;
-			Name = ("Candies");
+		float GetWeight(){
+			return Weight;
 		}
-		void Tomatoes(std::string Name, float Weight){
-			cout << "Tomatoes! Tasty and healhty! How many kilos will you take?" << endl;
-			cin >> Weight;
-			Name = ("Tomatoes");
-		}
-		void SetCost(std::string Name, float Cost, float Weight){
-			if(Name==("Apples"))Cost = Weight*73;
-			if(Name==("Candies"))Cost = Weight*56.7;
-			if(Name==("Tomatoes"))Cost = Weight*45.8;
-		}
-		
+			
 };
 class Buy:public Product{
-	Buy(std::string Name, int Count, float Cost, float Weight){
-		Cost=Cost;
-		Weight=Weight;
+	private:
+	int Count;
+	float AllCost;
+	public:
+	void SetAllCost(){
+		AllCost=300;
 	}
-	void SetCount(std::string Name, int Count, float Weight){
-			if(Name==("Apples"))Count = Weight/1.76;
-			if(Name==("Candies"))Count = Weight/0.94;
-			if(Name==("Tomatoes"))Count = Weight/2;
-		}
+	float GetAllCost(){
+		return AllCost;
+	}
+	void SetCount(){
+		Count = 15;
+	}
+	int GetCount(){
+		return Count;
+	}
 };
 class Check:public Buy{
-	void Check1(){
-		cout << "You bought" << Weight << "kilos of" << Name << ". This will cost you" << Cost << "rubles. Total numbers of" << Name << "bought:" << Count << endl;
+	public:
+	void PrintInfo(){
+		Buy shopping;
+		shopping.GetName();
+		shopping.GetWeight();
+		shopping.GetCost();
+		shopping.GetAllCost();
+		shopping.GetCount();	
 	}
 };
 int main(){
-	Product noodle;
-	cout << "What do you want to buy? Apples, Candies or tomatoes?" << endl;
-	std::string a;
-	cin >> a;
-	if(a==("Apples")){
-		noodle.Apples;
-		noodle.SetCost;
-		noodle.SetCount;
-		noodle.Check;
-	}
-	if(a==("Candies")){
-		noodle.Candies;
-		noodle.SetCost;
-		noodle.SetCount;
-		noodle.Check;
-	}
-	if(a==("Tomatoes")){
-		noodle.Tomatoes;
-		noodle.SetCost;
-		noodle.SetCount;
-		noodle.Check;
-	}
+	cout << "Welcome to the shop!!" << endl;
+	Buy Products;
+	Products.SetName();
+	Products.SetWeight();
+	Products.SetCost();
+	Products.SetAllCost();
+	Products.SetCount();
+	Check Check;
+	Check.PrintInfo();
 }
