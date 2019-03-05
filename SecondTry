@@ -7,11 +7,12 @@ int n;
 int PA=2; //previous a, A(3)
 int PB=3; // previous b, B(3)
 Find(int r){
-	if(r<n||r==n){
+	if(r<n){
 		PA=a;
 		PB=b;
 		a=PA+PB;
-		b=PA+PB+pow(2, n-3);
+		r++;
+		b=a-pow(2, r-3);
 		return Find(r);
 	}
 	else{
