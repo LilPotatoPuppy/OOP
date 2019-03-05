@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cmath>
+int a=5; //A(4)
+int b=4; //B(4)
+int r=4; //if r>n stop working r0=1
+int n;
+int PA=2; //previous a, A(3)
+int PB=3; // previous b, B(3)
+Find(int r){
+	if(r<n||r==n){
+		PA=a;
+		PB=b;
+		a=PA+PB;
+		b=PA+PB+pow(2, n-3);
+		return Find(r);
+	}
+	else{
+		return a;
+		return b;
+	}
+}
+int main(){
+	scanf("%d",&n);
+	Find(r);
+	printf("%d", a);
+}
